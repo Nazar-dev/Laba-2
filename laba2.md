@@ -2,22 +2,14 @@ name = None
 a = 0
 while True:
     print ("Menu")
-    print("1. Enter name:")
-    print("2. Print greting ")
-    print("3. Count the number of letters in words:  ")
-    print("4. Quit")
+    print("1. Count the number of letters in words:  ")
+    print("2. Sort a string: ")
+    print("3. Quit")
 
     response = input("Please chose an action:  ")
     
     print("")
     if response == "1":
-     name = input("Enter your name: ")
-    elif response == "2":
-        if name :
-            print ("Hello, ",name , "!")
-        else :
-            print("I dont know your name.")
-    elif response == "3":
         s = input("Enter string: ")
         letters = [0]* 26
         for i in s.lower():
@@ -29,7 +21,22 @@ while True:
             print(chr(i+97), letters[i])
 
 
-    elif response == "4":
+    elif response == "2":
+        string = input("Enter str: ")
+        words = string.split(' ')
+
+        words= list(set(words))
+
+
+        nodublication = ' '.join(words)
+
+        words.sort()
+
+        print ("Your words - ")
+
+        for nodublication in words:
+         print(nodublication)
+    elif response == "3":
         break
     else:
          input("Incorect chose! ")
